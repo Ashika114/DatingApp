@@ -19,6 +19,7 @@ export class MembersService {
   memberCache = new Map();
   user: User | undefined;
   userParams: UserParams | undefined;
+  createHubConnection: any;
 
   constructor(private http: HttpClient, private accountService: AccountService) {
     this.accountService.currentUser$.pipe(take(1)).subscribe(user => {
